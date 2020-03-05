@@ -1,7 +1,6 @@
 # Joke app
 
-SHORT DESCRIPTION OF THE APP
-This application...
+This application can show you a joke. The opening page is sent from the server as HTML document through the default route ('/') with an HTTP request using a GET method.
 
 Link to the deployed version
 
@@ -13,7 +12,8 @@ Link to the deployed version
 
 ## PROJECT SETUP
 
-npm,
+First clone the git repository > code parts insertion...
+- npm,
 express,
 
 Heroku app connected with GitHub > auto deploy enabled on master branch!!!
