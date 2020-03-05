@@ -15,5 +15,9 @@ const document = `
       <meta charset="UTF-8" />
       <meta name="viewport" content="width: device-width, initial-scale=1.0" />
     </head>
+    <body>
+      <h1>What’s the best thing about Switzerland?</h1>
+      <p>I don't know but the flag is a big plus.</p>
+    </body>
   </html>
 `
