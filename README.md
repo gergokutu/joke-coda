@@ -48,7 +48,10 @@ Check package.json if you have the proper "start" script in it, because:
 - feature > there are several feat/... branches to be able to work separately on different features 
 
 ## FEATURES
-- user can see a joke on the starting page
+- user can choose from the predefined categories (find in index.js -> jokes object)
+- user can choose their age (Adult vs Under 18)
+- user can see the joke of the chosen category
+- age control -> only adults can see the joke category of 'adult' /In Progress/
 
 ## ENDPOINTS...
 
