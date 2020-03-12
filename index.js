@@ -30,6 +30,46 @@ app.get(
 )
 
 app.get(
+  '/start',
+  (request, response) => {
+    console.log('Path:', request.path)
+
+    // add the jokes properties as category buttons
+    
+    const createCategoryButtons = () => {
+      // save every <li>
+      const literalsArray = []
+      // iterate over jokes props
+      for (props in jokes) {
+        let literal = `<li>${props}</li>`
+        literalsArray.push(literal)
+      }
+
+      // we do not need the commas!!!
+      // try without .join('')
+      return literalsArray.join('')
+    }
+    
+
+    const page = `
+      <html>
+        <head>
+          <title>KUTU</title>
+          <meta name="description" content="Joke app" />
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width: device-width, initial-scale=1.0" />
+        </head>
+        <body>
+          <h1>Choose a category with the radio buttons</h1>
+          <div id=categories>${createCategoryButtons()}</div>
+        </body>
+      </html>
+    `
+    response.send(page)
+  }
+)
+
+app.get(
   '/jokes/:id',
   (request, response) => {
     console.log('Path:', request.path)
@@ -62,7 +102,4 @@ const jokes = {
   adult: 'age controlled category'
 }
 
-// iterate over jokes props
-for (props in jokes) {
-  console.log(props)
-}
+
