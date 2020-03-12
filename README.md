@@ -52,9 +52,7 @@ Check package.json if you have the proper "start" script in it, because:
 
 ## ENDPOINTS...
 
-/
-- get method...
-
-(maybe a table would be the best format... endpoint | method | description )
-
-etc...
+| ENDPOINT | METHOD | DESCRIPTION |
+| -------- | ------ | ------------------------- |
+| '/' | get | Ask user input: age, joke category. After submit calls the '/jokes' endpoint|
+| '/jokes' | get | Shows the proper joke |
