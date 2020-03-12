@@ -2,7 +2,7 @@
 
 This application can show you a joke. The opening page is sent from the server as HTML document through the default route ('/') with an HTTP request using a GET method.
 
-Link to the deployed version...
+[This is the link to the deployed version.](https://joke-code-server-gergokutu.herokuapp.com/)
 
 ## TECHNOLOGIES
 - Javascript
