@@ -41,7 +41,13 @@ app.get(
       const literalsArray = []
       // iterate over jokes props
       for (props in jokes) {
-        let literal = `<li>${props}</li>`
+        let literal = `
+          <input type="radio" id="${props}" name="category" value="${props}" />
+          <label for="${props}">
+            ${props}
+          </label>
+          <br>
+        `
         literalsArray.push(literal)
       }
 
@@ -50,6 +56,18 @@ app.get(
       return literalsArray.join('')
     }
     
+//   <form action="/action_page.php">
+
+//   <p>Please select your gender:</p>
+//   <input type="radio" id="male" name="gender" value="male">
+//   <label for="male">Male</label><br>
+//   <input type="radio" id="female" name="gender" value="female">
+//   <label for="female">Female</label><br>
+//   <input type="radio" id="other" name="gender" value="other">
+//   <label for="other">Other</label>
+
+//   <input type="submit" value="Submit">
+// </form>
 
     const page = `
       <html>
@@ -61,7 +79,10 @@ app.get(
         </head>
         <body>
           <h1>Choose a category with the radio buttons</h1>
-          <div id=categories>${createCategoryButtons()}</div>
+          <form action="?" id=categories>
+            ${createCategoryButtons()}
+            <input type="submit" value="Submit">
+          </form>
         </body>
       </html>
     `
