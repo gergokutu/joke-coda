@@ -51,7 +51,7 @@ Check package.json if you have the proper "start" script in it, because:
 - user can choose from the predefined categories (find in index.js -> jokes object)
 - user can choose their age (Adult vs Under 18)
 - user can see the joke of the chosen category
-- age control -> only adults can see the joke category of 'adult' /In Progress/
+- age control -> only adults can see the joke category of 'adult'
 
 ## ENDPOINTS...
 
