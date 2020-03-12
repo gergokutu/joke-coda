@@ -19,8 +19,6 @@ const jokes = {
 app.get(
   '/',
   (request, response) => {
-    console.log('Path:', request.path)
-    
     // add the jokes properties as category buttons
     const createCategoryButtons = () => {
       // save every radio button
@@ -73,7 +71,9 @@ app.get(
   '/jokes',
   (request, response) => {
     const { age, category } = request.query
-    console.log('Path:', request.path)
+    const joke = age === 'children' ?
+      'Sorry, you cannot see the adult category. Choose another category or tick age as adult!' :
+      jokes[category]
 
     const page = `
       <html>
@@ -85,7 +85,7 @@ app.get(
         </head>
         <body>
           <h1>${category}</h1>
-          <p>${jokes[category]}</p>
+          <p>${joke}</p>
         </body>
       </html>
     `
