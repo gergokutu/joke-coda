@@ -2,7 +2,7 @@
 
 This application can show you a joke. The opening page is sent from the server as HTML document through the default route ('/') with an HTTP request using a GET method.
 
-Link to the deployed version...
+[This is the link to the deployed version.](https://joke-code-server-gergokutu.herokuapp.com/)
 
 ## TECHNOLOGIES
 - Javascript
@@ -48,13 +48,14 @@ Check package.json if you have the proper "start" script in it, because:
 - feature > there are several feat/... branches to be able to work separately on different features 
 
 ## FEATURES
-- user can see a joke on the starting page
+- user can choose from the predefined categories (find in index.js -> jokes object)
+- user can choose their age (Adult vs Under 18)
+- user can see the joke of the chosen category
+- age control -> only adults can see the joke category of 'adult' /In Progress/
 
 ## ENDPOINTS...
 
-/
-- get method...
-
-(maybe a table would be the best format... endpoint | method | description )
-
-etc...
+| ENDPOINT | METHOD | DESCRIPTION |
+| -------- | ------ | ------------------------- |
+| '/' | get | Ask user input: age, joke category. After submit calls the '/jokes' endpoint|
+| '/jokes' | get | Shows the proper joke |
