@@ -17,7 +17,7 @@ app.get(
           <title>KUTU</title>
           <meta name="description" content="Joke app" />
           <meta charset="UTF-8" />
-          <meta name="viewport" content="width: device-width, initial-scale=1.0" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </head>
         <body>
           <h1>What’s the best thing about Switzerland?</h1>
@@ -46,7 +46,7 @@ app.get(
       }
 
       // we do not need the commas!!!
-      // try without .join('')
+      // try without .join(''git)
       return literalsArray.join('')
     }
     
@@ -57,7 +57,7 @@ app.get(
           <title>KUTU</title>
           <meta name="description" content="Joke app" />
           <meta charset="UTF-8" />
-          <meta name="viewport" content="width: device-width, initial-scale=1.0" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </head>
         <body>
           <h1>Choose a category with the radio buttons</h1>
