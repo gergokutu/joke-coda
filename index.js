@@ -28,3 +28,12 @@ app.get(
     response.send(page)
   }
 )
+
+// joke object
+const jokes = {
+  piglet: '',
+  word: '',
+  IT: '',
+  Other: '',
+  Adult: ''
+}
