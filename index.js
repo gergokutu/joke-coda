@@ -8,7 +8,7 @@ app.listen(
 )
 
 app.get(
-  '/',
+  '/old',
   (request, response) => {
     console.log('Path:', request.path)
     const page = `
@@ -29,11 +29,40 @@ app.get(
   }
 )
 
+app.get(
+  '/jokes/:id',
+  (request, response) => {
+    console.log('Path:', request.path)
+    console.log('Param:', request.params.id)
+    const param = request.params.id
+    const page = `
+      <html>
+        <head>
+          <title>KUTU</title>
+          <meta name="description" content="Joke app" />
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </head>
+        <body>
+          <h1>${request.params.id}</h1>
+          <p>${jokes[param]}</p>
+        </body>
+      </html>
+    `
+    response.send(page)
+  }
+)
+
 // joke object
 const jokes = {
-  piglet: '',
-  word: '',
-  IT: '',
-  Other: '',
-  Adult: ''
+  piglet: 'agressive piglet',
+  word: 'with words',
+  IT: 'geek humor',
+  other: 'cannot be categorized',
+  adult: 'age controlled category'
+}
+
+// iterate over jokes props
+for (props in jokes) {
+  console.log(props)
 }
