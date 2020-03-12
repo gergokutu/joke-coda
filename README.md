@@ -57,5 +57,5 @@ Check package.json if you have the proper "start" script in it, because:
 
 | ENDPOINT | METHOD | DESCRIPTION |
 | -------- | ------ | ------------------------- |
-| '/' | get | Ask user input: age, joke category. After submit calls the '/jokes' endpoint|
+| '/' | get | Ask user input: age, joke category. After submit it calls the '/jokes' endpoint |
 | '/jokes' | get | Shows the proper joke |
