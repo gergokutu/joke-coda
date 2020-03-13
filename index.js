@@ -117,25 +117,29 @@ app.get(
 
           </style>
         </head>
+
         <body>
-          <h1>Choose a category with the radio buttons</h1>
+          <header>
+            <h1>Choose a category with the radio buttons</h1>
+            <div id="marquee">
+              <img src="https://relationshipthings.com.au/wp-content/uploads/2015/05/Choose.gif" alt="'You choose' sign between arrows" />
+            </div>
+          </header>
           
-          <div id="marquee">
-            <img src="https://relationshipthings.com.au/wp-content/uploads/2015/05/Choose.gif" alt="'You choose' sign between arrows" />
-          </div>
-         
-          <form action="/jokes" method="get">
-            <p>Please select your age:</p>
-              <input type="radio" id="adult" name="age" value="adult" />
-              <label for="adult">Adult</label>
+          <main>
+            <form action="/jokes" method="get">
+              <p>Please select your age:</p>
+                <input type="radio" id="adult" name="age" value="adult" />
+                <label for="adult">Adult</label>
+                <br>
+                <input type="radio" id="children" name="age" value="children" checked />
+                <label for="children">Under 18</label>
+              <p>Please select a category:</p>
+              ${createCategoryButtons()}
               <br>
-              <input type="radio" id="children" name="age" value="children" checked />
-              <label for="children">Under 18</label>
-            <p>Please select a category:</p>
-            ${createCategoryButtons()}
-            <br>
-            <input type="submit" value="Submit">
-          </form>
+              <input type="submit" value="Submit">
+            </form>
+          </main>
         </body>
       </html>
     `
