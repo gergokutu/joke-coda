@@ -55,6 +55,7 @@ app.get(
               padding-top: 32px;
               text-align: center;
               line-height: 200%;
+              background-color: rgb(236, 237, 237);
             }
             
             form {
@@ -82,19 +83,28 @@ app.get(
               border: 4px solid black;
               border-radius: 10px;
               font-size: 1.5rem;
+              background-color: #dddddd;
+            }
+
+            input[type=submit]:hover {
+              background-color: #bebebe;
+            }
+
+            h1 {
+              text-align: center;
+              margin: auto;
+              font-family: cursive;
+              font-size: 2rem;
+              line-height: 3rem;
             }
             
             p {
               text-align: center;
-            }
-            
-            h1 {
-              text-align: center;
-              margin: auto;
+              font-weight: bold;
             }
 
-            #marquee {
-              width: 100%;
+            img {
+              width: 75%;
               height: auto;
               animation: marquee 2s linear infinite;
             }
@@ -111,7 +121,7 @@ app.get(
           <h1>Choose a category with the radio buttons</h1>
           
           <div id="marquee">
-            <img  src="https://relationshipthings.com.au/wp-content/uploads/2015/05/Choose.gif" alt="'You choose' sign between arrows" />
+            <img src="https://relationshipthings.com.au/wp-content/uploads/2015/05/Choose.gif" alt="'You choose' sign between arrows" />
           </div>
          
           <form action="/jokes" method="get">
@@ -129,7 +139,6 @@ app.get(
         </body>
       </html>
     `
-    
     response.send(page)
   }
 )
@@ -156,11 +165,18 @@ app.get(
               padding-top: 32px;
               text-align: center;
               line-height: 200%;
+              background-color: rgb(236, 237, 237);
+            }
+
+            h1 {
+              font-family: cursive;
+              font-size: 2rem;
+              line-height: 3rem;
             }
           </style>
         </head>
         <body>
-          <h1>${category}</h1>
+          <h1>${category.charAt(0).toUpperCase() + category.slice(1)}</h1>
           <p>${joke}</p>
         </body>
       </html>
