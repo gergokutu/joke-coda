@@ -65,13 +65,13 @@ app.get(
             .categories {
               display: inline-block;
               text-align: center;
-              margin-left: 30%;
+              margin-left: 25%;
             }
 
             input[name=age] {
               display: inline-block;
               text-align: center;
-              margin-left: 30%;
+              margin-left: 25%;
             }
 
             input[type=submit] {
@@ -88,6 +88,10 @@ app.get(
               text-align: center;
             }
             
+            h1 {
+              text-align: center;
+              margin: auto;
+            }
           </style>
         </head>
         <body>
@@ -127,6 +131,15 @@ app.get(
           <meta name="description" content="Joke app" />
           <meta charset="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <style>
+            body {
+              padding-left: 25%;
+              padding-right: 25%;
+              padding-top: 32px;
+              text-align: center;
+              line-height: 200%;
+            }
+          </style>
         </head>
         <body>
           <h1>${category}</h1>
