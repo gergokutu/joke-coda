@@ -55,6 +55,7 @@ app.get(
               padding-top: 32px;
               text-align: center;
               line-height: 200%;
+              background-color: rgb(236, 237, 237);
             }
             
             form {
@@ -82,36 +83,66 @@ app.get(
               border: 4px solid black;
               border-radius: 10px;
               font-size: 1.5rem;
+              background-color: #dddddd;
+            }
+
+            input[type=submit]:hover {
+              background-color: #bebebe;
+            }
+
+            h1 {
+              text-align: center;
+              margin: auto;
+              font-family: cursive;
+              font-size: 2rem;
+              line-height: 3rem;
             }
             
             p {
               text-align: center;
+              font-weight: bold;
             }
-            
-            h1 {
-              text-align: center;
-              margin: auto;
+
+            img {
+              width: 75%;
+              height: auto;
+              animation: marquee 2s linear infinite;
             }
+
+            @keyframes marquee {
+              0% { transform: translateX(-5%); }
+              50% { transform: translateX(5%); }
+              100% { transform: translateX(-5%); }
+            }
+
           </style>
         </head>
+
         <body>
-          <h1>Choose a category with the radio buttons</h1>
-          <form action="/jokes" method="get">
-            <p>Please select your age:</p>
-              <input type="radio" id="adult" name="age" value="adult" />
-              <label for="adult">Adult</label>
+          <header>
+            <h1>Choose a category with the radio buttons</h1>
+            <div id="marquee">
+              <img src="https://relationshipthings.com.au/wp-content/uploads/2015/05/Choose.gif" alt="'You choose' sign between arrows" />
+            </div>
+          </header>
+          
+          <main>
+            <form action="/jokes" method="get">
+              <p>Please select your age:</p>
+                <input type="radio" id="adult" name="age" value="adult" />
+                <label for="adult">Adult</label>
+                <br>
+                <input type="radio" id="children" name="age" value="children" checked />
+                <label for="children">Under 18</label>
+              <p>Please select a category:</p>
+              ${createCategoryButtons()}
               <br>
-              <input type="radio" id="children" name="age" value="children" checked />
-              <label for="children">Under 18</label>
-            <p>Please select a category:</p>
-            ${createCategoryButtons()}
-            <br>
-            <input type="submit" value="Submit">
-          </form>
+              <input type="submit" value="Submit">
+            </form>
+          </main>
         </body>
       </html>
     `
-    
     response.send(page)
   }
 )
@@ -138,11 +169,18 @@ app.get(
               padding-top: 32px;
               text-align: center;
               line-height: 200%;
+              background-color: rgb(236, 237, 237);
+            }
+
+            h1 {
+              font-family: cursive;
+              font-size: 2rem;
+              line-height: 3rem;
             }
           </style>
         </head>
         <body>
-          <h1>${category}</h1>
+          <h1>${category.charAt(0).toUpperCase() + category.slice(1)}</h1>
           <p>${joke}</p>
         </body>
       </html>
