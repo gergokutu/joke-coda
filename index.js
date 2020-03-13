@@ -40,6 +40,7 @@ app.get(
       return literalsArray.join('')
     }
     
+    // <link defer rel="stylesheet" type="text/css" href="http://localhost:3000/styles/style.css" />
     const page = `
       <html>
         <head>
@@ -47,6 +48,47 @@ app.get(
           <meta name="description" content="Joke app" />
           <meta charset="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <style>
+            body {
+              padding-left: 25%;
+              padding-right: 25%;
+              padding-top: 32px;
+              text-align: center;
+              line-height: 200%;
+            }
+            
+            form {
+              display: inline-block;
+              text-align: start;
+            }
+
+            .categories {
+              display: inline-block;
+              text-align: center;
+              margin-left: 30%;
+            }
+
+            input[name=age] {
+              display: inline-block;
+              text-align: center;
+              margin-left: 30%;
+            }
+
+            input[type=submit] {
+              display: inline-block;
+              padding: 20px;
+              width: 200px;
+              margin: auto;
+              border: 4px solid black;
+              border-radius: 10px;
+              font-size: 1.5rem;
+            }
+            
+            p {
+              text-align: center;
+            }
+            
+          </style>
         </head>
         <body>
           <h1>Choose a category with the radio buttons</h1>
@@ -54,15 +96,18 @@ app.get(
             <p>Please select your age:</p>
               <input type="radio" id="adult" name="age" value="adult" />
               <label for="adult">Adult</label>
+              <br>
               <input type="radio" id="children" name="age" value="children" checked />
               <label for="children">Under 18</label>
             <p>Please select a category:</p>
             ${createCategoryButtons()}
+            <br>
             <input type="submit" value="Submit">
           </form>
         </body>
       </html>
     `
+    
     response.send(page)
   }
 )
