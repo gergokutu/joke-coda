@@ -92,10 +92,28 @@ app.get(
               text-align: center;
               margin: auto;
             }
+
+            #marquee {
+              width: 100%;
+              height: auto;
+              animation: marquee 2s linear infinite;
+            }
+
+            @keyframes marquee {
+              0% { transform: translateX(-5%); }
+              50% { transform: translateX(5%); }
+              100% { transform: translateX(-5%); }
+            }
+
           </style>
         </head>
         <body>
           <h1>Choose a category with the radio buttons</h1>
+          
+          <div id="marquee">
+            <img  src="https://relationshipthings.com.au/wp-content/uploads/2015/05/Choose.gif" alt="'You choose' sign between arrows" />
+          </div>
+         
           <form action="/jokes" method="get">
             <p>Please select your age:</p>
               <input type="radio" id="adult" name="age" value="adult" />
